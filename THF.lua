@@ -160,7 +160,7 @@ function self_command(command)
     if command == 'toggle TP set' then
         tp_index = tp_index +1
         if tp_index > #tp_set_names then tp_index = 1 end
-        send_command('@input /echo ----- TP Set changed to '..tp_set_names[tp_index]..' -----')
+        windower.add_to_chat(123,'----- TP Set changed to '..tp_set_names[tp_index]..' -----')
         equip(sets.tp[tp_set_names[tp_index]])
     end    
 end
