@@ -105,10 +105,11 @@
     sets.precast.blue = set_combine(sets.precast.fastcast,{body="Mavi Mintan +1"})
 
     sets.midcast.BlueMagic = {
-        ammo="Staunch Tathlum",
+        ammo="Ghastly Tathlum",
         head="Jhakri Coronal +2",
         neck="Mirage Stole +1",      
         left_ear="Friomisi Earring",
+        right_ear="Halasz Earring",
         body="Jhakri Robe +1",
         hands="Jhakri Cuffs +2",
         left_ring="Jhakri Ring",
@@ -133,7 +134,7 @@
         ammo="Aurgelmir Orb",
         head="Ayanmo Zucchetto +2",
         neck="Mirage Stole +1",
-        left_ear="Mache Earring",
+        left_ear="Ishvara Earring",
         right_ear="Moonshade Earring",
         body="Assimilator's Jubbah +2",
         hands="Jhakri Cuffs +2",
@@ -164,7 +165,15 @@
 
     -- Requiscat (MND 73% / 76% / 79% / 82% / 85%))
     sets.ws["Requiescat"] = {
-
+        ammo="Aurgelmir Orb",
+        waist="Soil Belt",
+        left_ear="Moonshade Earring",
+        right_ear="Cessance Earring", 
+        body="Jhakri Robe +1",       
+        hands="Jhakri Cuffs +2",
+        right_ring="Petrov Ring",
+        legs="Jhakri Slops +1",
+        feet="Jhakri Pigaches +1",
     }
     -- Sanguine Blade (STR 30% MND 50%)
     sets.ws["Sanguine Blade"] = {
@@ -181,7 +190,15 @@
     
     -- Expiacion (STR 30% INT 30% DEX 20%)
     sets.ws["Expiacion"] = {
-
+        ammo="Aurgelmir Orb",
+        neck="Mirage Stole +1",
+        left_ear="Ishvara Earring",
+        right_ear="Moonshade Earring",
+        body="Assimilator's Jubbah +2",
+        hands="Jhakri Cuffs +2",
+        left_ring="Karieyh Ring",
+        right_ring="Rajas Ring",
+        back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
     }
 
     send_command('input /macro book 11;wait .1;input /macro set 1;wait .1;input //lua load blualert;wait .1;input //lua load azuresets')
