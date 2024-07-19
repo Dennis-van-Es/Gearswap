@@ -42,7 +42,7 @@
     sets.idle["Empyrean"] = {
         head="Hashishin Kavuk",
         body="Mavi Mintan +1",
-        hands="Mavi Bazuband",
+        hands="Mavi Bazubands +1",
         leggs="Mavi Tayt +1",
         feet="Mavi Basmak",
     }
@@ -114,7 +114,7 @@
         hands="Jhakri Cuffs +2",
         left_ring="Jhakri Ring",
         right_ring="Acumen Ring",
-        back="Toro Cape",
+        back={ name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}},
         waist="Eschan Stone",
         legs="Jhakri Slops +1",
         feet="Jhakri Pigaches +1",
@@ -182,7 +182,7 @@
         body="Jhakri Robe +1",
         hands="Jhakri Cuffs +2",
         left_ring="Icesoul Ring",
-        back="Toro Cape",
+        back={ name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}},
         waist="Eschan Stone",
         legs="Jhakri Slops +1",
         feet="Jhakri Pigaches +1",
