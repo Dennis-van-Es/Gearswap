@@ -21,23 +21,29 @@
     sets.tp["Normal"] = {
         ammo="Aurgelmir Orb",
         head="Skormoth Mask",
-        body="Sulevia's Plate. +1",
-        hands="Flam. Manopolas +1",
-        legs="Sulevi. Cuisses +1",
-        feet="Flam. Gambieras +1",
         neck="Sanctity Necklace",
-        waist="Eschan Stone",
         left_ear="Cessance Earring",
         right_ear="Mache Earring",
+        body="Flam. Korazin +1",
+        hands="Flam. Manopolas +1",
         left_ring="Enlivened Ring",
         right_ring="Petrov Ring",
-        back="Mauler's Mantle",
+        back="Bleating Mantle",
+        waist="Windbuffet Belt +1",
+        legs="Sulevia's Cuisses +1",
+        feet="Flam. Gambieras +1",
     }
         
     sets.tp["DT"] = {}    
     sets.tp["DualWield"] = {}
 
     -- Weapon Skill Sets
+    sets.ws.base = {
+        left_ear="Ishvara Earring",
+        right_ear="Moonshade Earring",
+        left_ring="Karieyh Ring",
+        waist="Grunfeld Rope",
+    }
     sets.ws['Red Lotus Blade'] = {}    
 
     -- Job Ability Sets
@@ -57,6 +63,8 @@ function precast(spell)
     elseif spell.prefix == '/weaponskill' then
         if sets.ws['spell.name'] then
             equip(sets.ws['spell.name'])
+        else
+            equip(sets.ws.base)
         end
     end
 end
