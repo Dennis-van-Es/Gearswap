@@ -10,22 +10,21 @@
     sets.idle.normal = {}    
     
     sets.melee.normal = {
-        main        = "",
-        sub         = "",
-        range       = "",
-        ammo        = "",
-        head        = "",
-        neck        = "",
-        ear1        = "",
-        ear2        = "",      
-        body        = "",
-        hands       = "",
-        ring1       = "",
-        ring2       = "",
-        back        = "",
-        waist       = "",
-        legs        = "",
-        feet        = "",        
+        main="Naegling",
+        sub="Culminus",
+        ammo="Aurgelmir Orb",
+        head="Jhakri Coronal +2",
+        body="Jhakri Robe +2",
+        hands="Jhakri Cuffs +2",
+        legs="Jhakri Slops +1",
+        feet="Jhakri Pigaches +1",
+        neck="Sanctity Necklace",
+        waist="Windbuffet Belt +1",
+        left_ear="Cessance Earring",
+        right_ear="Mache Earring",
+        left_ring="Petrov Ring",
+        right_ring="Jhakri Ring",
+        back="Bleating Mantle",    
     }    
     -- Weapon Skill Sets
     sets.ws['Red Lotus Blade'] = {}    

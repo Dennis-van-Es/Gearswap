@@ -8,19 +8,37 @@
     sets.aftercast = {}             -- leave this empty
  
     sets.idle.normal = {
-        head="Melee Crown",
-        body="Melee Cyclas",
-        hands="Melee Gloves",
-        legs="Melee Hose",
-        feet="Herald's Gaiters",
+        main="Denouements",
+        ammo="Aurgelmir Orb",
+        head="Skormoth Mask",
+        body="Mummu Jacket +2",
+        hands={ name="Naga Tekko", augments={'STR+9','Accuracy+13','"Subtle Blow"+6',}},
+        legs={ name="Adhemar Kecks", augments={'DEX+10','AGI+10','Accuracy+15',}},
+        feet={ name="Herculean Boots", augments={'Attack+14','"Triple Atk."+3','DEX+10',}},
+        neck="Sanctity Necklace",
+        waist="Windbuffet Belt +1",
+        left_ear="Cessance Earring",
+        right_ear="Mache Earring",
+        left_ring="Petrov Ring",
+        right_ring="Enlivened Ring",
+        back="Bleating Mantle",
     }    
     
     sets.melee.normal = {
-        head="Melee Crown",
-        body="Melee Cyclas",
-        hands="Melee Gloves",
-        legs="Melee Hose",
-        feet="Melee Gaiters",
+        main="Denouements",
+        ammo="Aurgelmir Orb",
+        head="Skormoth Mask",
+        body="Mummu Jacket +2",
+        hands={ name="Naga Tekko", augments={'STR+9','Accuracy+13','"Subtle Blow"+6',}},
+        legs={ name="Adhemar Kecks", augments={'DEX+10','AGI+10','Accuracy+15',}},
+        feet={ name="Herculean Boots", augments={'Attack+14','"Triple Atk."+3','DEX+10',}},
+        neck="Sanctity Necklace",
+        waist="Windbuffet Belt +1",
+        left_ear="Cessance Earring",
+        right_ear="Mache Earring",
+        left_ring="Petrov Ring",
+        right_ring="Enlivened Ring",
+        back="Bleating Mantle",
     }    
     -- Weapon Skill Sets
     sets.ws['Red Lotus Blade'] = {}    
