@@ -94,7 +94,7 @@
     -- Fast Cast
     sets.precast.fastcast = {
         ammo="Staunch Tathlum",
-        head="Jhakri Coronal +2"
+        head="Jhakri Coronal +2",
         body="Luhlaza Jubbah +1",
         hands="Jhakri Cuffs +2",
         left_ring="Jhakri Ring",
