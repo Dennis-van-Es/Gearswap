@@ -1,6 +1,7 @@
   function get_sets()
     sets.idle = {}                  -- Leave this empty
-    sets.tp = {}                 -- Leave this empty
+    sets.tp = {}                    -- Leave this empty
+    sets.weapon={}                  -- Leave this empty
     sets.ws = {}                    -- Leave this empty
     sets.ja = {}                    -- Leave this empty
     sets.precast = {}               -- leave this empty    
@@ -9,32 +10,62 @@
 
     -- Define variables 
     tp_index = 1
-    tp_set_names = {"Normal","DT","DualWield"}
+    tp_set_names = {"2Handed","SwordandBoard","DualWield"}
     idle_index = 1
-    idle_set_names = {"Normal"}
+    idle_set_names = {"Lockstyle","DT"}
     weapon_index = 1
-    weapon_set_names = {"GreatAxe","SwordAndBoard","DualWield"}
+    weapon_set_names = {"GreatAxe","Trial"}
     autohasso = 0
-
-    sets.idle["Normal"] = {}
     
-    sets.tp["Normal"] = {
-        ammo="Aurgelmir Orb",
-        head="Skormoth Mask",
-        neck="Sanctity Necklace",
-        left_ear="Cessance Earring",
-        right_ear="Mache Earring",
-        body="Flam. Korazin +1",
-        hands="Flam. Manopolas +1",
-        left_ring="Enlivened Ring",
-        right_ring="Petrov Ring",
-        back="Bleating Mantle",
-        waist="Windbuffet Belt +1",
-        legs="Sulevia's Cuisses +1",
-        feet="Flam. Gambieras +1",
+    sets.weapon['GreatAxe']={main="Instigator"}
+    sets.weapon['Trial']={main="Sagaris"}
+
+    sets.reive={neck="Adoulin's Refuge +1",}
+
+    artifact = {}
+    artifact.head="Fighter's Mask"
+    artifact.body="Fighter's Lorica"
+    artifact.hands="Fighter's Mufflers"
+    artifact.legs="Fighter's Cuisses"
+    artifact.feet="Fighter's Calligae"
+
+    relic={}
+    relic.head="Warrior's Mask"         -- Warcry
+    relic.body="Warrior's Lorica"       -- Aggressor
+    relic.hands="Warrior's Mufflers"    --
+    relic.legs="Warrior's Cuisses"
+    relic.feet="Warrior's Calligae"     -- Berserk
+
+    empy={}
+    empy.head="Ravager's Mask"
+    empy.body="Ravager's Lorica"        -- Blood Rage
+    empy.hands="Ravager's Mufflers"     -- Restraint
+    empy.legs="Ravager's Cuisses"
+    empy.feet="Ravager's Calligae"      -- Retaliation
+
+    Cichol = {}                         -
+    Cichol.tp ={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}   --   Dye: Acc+10, Resin: DT-5%
+    Cichol.wsSTR = "Cichol's Mantle"    -- Thread: STR+20,  Dust: Acc/Att+20, Dye: STR+10, Sap: WSD+10%, Resin: PDT-10%
+    Cichol.wsVIT = "Cichol's Mantle"    -- Thread: VIT+20,  Dust: Acc/Att+20, Dye: VIT+10, Sap: WSD+10%, Resin: PDT-10%
+
+    sets.tp["2Handed"] = {
+        sub="Duplus Grip",                      --> Utu Grip
+        ammo="Aurgelmir Orb",                   --> Seething Bomblet        --> Ginsen              --> Coiste Bodhar
+        head="Flamma Zucchetto +2",             --> Hjarrandi Helm          --> Boii Mask +2        --> Boii Mask +3
+        neck="Sanctity Necklace",               --> War. Beads +1           --> War. Beads +2
+        left_ear="Cessance Earring",            --> Schere Eaarring
+        right_ear="Mache Earring",              --> Brutal Earring          --> Boii Earring        --> Boii Earring +1
+        body="Flamma Korazin +1",               --> Valorous Mail           --> Agoge Lorica +2     --> Boii Lorica +2  --> Boii Lorica +3
+        hands="Sulevia's Gauntlets +2",         --> Sakpata's Gauntlets
+        left_ring="Flamma Ring",                --> Niqmaddu Ring
+        right_ring="Petrov Ring",               --> Moonbeam Ring           --> Moonlight Ring
+        back=Cichol.tp,                         --> Cichol's Mantle dye 0/10, resin 0/5
+        waist="Ioskeha Belt",                   --> Ioskeha Belt +1         --> Sailfi Belt +1
+        legs="Sulevia's Cuisses +2",            --> Pumm. Cuisses +2        --> Pumm. Cuisses +3       
+        feet="Flam. Gambieras +2",              --> Pumm. Calligae +2       --> Pumm. Calligae +3
     }
         
-    sets.tp["DT"] = {}    
+    sets.tp["SwordandBoard"] = {}    
     sets.tp["DualWield"] = {}
 
     -- Weapon Skill Sets
@@ -44,14 +75,65 @@
         left_ring="Karieyh Ring",
         waist="Grunfeld Rope",
     }
-    sets.ws['Red Lotus Blade'] = {}    
+
+    -- Steel Cyclone STR 60% VIT 60%
+    sets.ws['Steel Cyclone'] = {
+        ammo="Aurgelmir Orb",                   --> Knobkierrie
+        head="Skormoth Mask",                   --> Nyame Helm
+        neck="Sanctity Necklace",               --> War. Beads +2
+        left_ear="Ishvara Earring",             --> Thrud Earring
+        right_ear="Moonshade Earring", 
+        body="Flamma Korazin +1",               --> Nyame Mail
+        hands="Sulevia's Gauntlets +2",         --> Boii Mufflers +3
+        left_ring="Karieyh Ring",               --> Regal Ring           
+        right_ring="Ifrit Ring",                --> Epaminondas's Ring
+        back=Cichol.wsSTR,
+        waist="Grunfeld Rope",                  --> Sailfi Belt +1
+        legs="Sulevia's Cuisses +2",            --> Boii Cuisses +3
+        feet="Sulevia's Leggings +1",           --> Nyame Sollerets
+    }    
 
     -- Job Ability Sets
-    sets.ja['Berserk'] = {}
+    sets.ja['Warcry'] = { 
+        head=relic.head,
+    }
+    sets.ja['Aggressor'] = {
+        body=relic.body,
+    }
+    sets.ja['Berserk'] = {
+        feet=relic.feet,
+    }
+    sets.ja['Blood Rage'] = {
+        body=empy.body,
+    }
+    sets.ja['Restraint'] = {
+        hands=empy.hands,
+    }
+    sets.ja['Retaliation'] = {
+        feet=empy.feet,
+    }
+
+    -- Idle sets
+    sets.idle['Lockstyle'] = {
+        head="Flamma Zucchetto +2",
+        body="Flamma Korazin +1",
+        hands="Flamma Manopolas +1",
+        legs="Flamma Dirs +1",
+        feet="Flamma Gambieras +2",
+    }
+
+    sets.idle['DT'] = {
+        head="Sulevia's Mask",
+        body="Sulevia's Platemail +1",
+        hands="Sulevia's Gauntlets +2",
+        legs="Sulevia's Cuisses +2",
+        feet="Sulevia's Leggings +1",
+    }
 
     send_command('input /macro book 6;wait .1;input /macro set 1')
-    send_command('bind ^f10 gs c autohasso')
+    send_command('bind f9 gs c autohasso')
     send_command('bind f10 gs c toggle TP set')
+    send_command('bind ^f10 gs c toggle idle set')
     send_command('bind f11 gs c toggle weapon set')
 end
  
@@ -61,8 +143,8 @@ function precast(spell)
             equip(sets.ja[spell.name])
         end
     elseif spell.prefix == '/weaponskill' then
-        if sets.ws['spell.name'] then
-            equip(sets.ws['spell.name'])
+        if sets.ws[spell.name] then
+            equip(sets.ws[spell.name])
         else
             equip(sets.ws.base)
         end
@@ -86,8 +168,18 @@ end
 function idle()
     if player.status=='Engaged' then
         equip(sets.tp[tp_set_names[tp_index]])
+
+        -- check if Hasso should be re-applied
+        if not buffactive['Hasso'] then
+            if autohasso == 1 then
+                send_command('input /ja Hasso <me>')
+            end
+        end
     else
-        equip(sets.idle[idle_set_names[idle_index]])       
+        equip(sets.idle[idle_set_names[idle_index]])
+    end
+    if buffactive['Reive Mark'] then
+        equip(sets.reive)
     end
 end
  
@@ -97,7 +189,7 @@ end
 
 function buff_change(name, gain, buff_details)
     if name == 'Hasso' and not gain then
-        if autohasso then
+        if autohasso == 1 then
             send_command('input /ja Hasso <me>')
         end
     end
@@ -109,8 +201,16 @@ function self_command(command)
         if tp_index > #tp_set_names then 
             tp_index = 1 
         end
-        windower.add_to_chat(123, ' ----- TP Set changed to '..tp_set_names[tp_index]..' -----')
+        windower.add_to_chat(123, ' ----- TP set changed to '..tp_set_names[tp_index]..' -----')
         equip(sets.tp[tp_set_names[tp_index]])
+    end
+    if command == 'toggle idle set' then
+        idle_index = idle_index +1
+        if idle_index > #idle_set_names then
+            idle_index = 1
+        end
+        windower.add_to_chat(123, ' ----- idle set changed to '..idle_set_names[idle_index]..' -----')
+        equip(sets.idle[idle_set_names[idle_index]])
     end
     if command == 'toggle weapon set' then
         weapon_index = weapon_index +1
@@ -133,7 +233,7 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
+    send_command('unbind f9')
     send_command('unbind f10')
-    send_command('unbind ^f10')
     send_command('unbind f11')
 end
