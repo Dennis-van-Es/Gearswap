@@ -17,17 +17,29 @@
     weapon_set_names = {"GreatAxe","Trial"}
     autohasso = 0
     
-    sets.weapon['GreatAxe']={main="Instigator"}
-    sets.weapon['Trial']={main="Sagaris"}
+    sets.weapon['GreatAxe']={
+        main="Instigator",
+        sub="Duplus Grip",                      --> Utu Grip
+    }
+
+    sets.weapon['Trial']={
+        main="Sagaris",
+        sub="Duplus Grip",                      --> Utu Grip
+    }
+
+    sets.weapon['SwordandBoard'] = {
+        main="Naegling",
+        sub="Ark Shield",
+    }
 
     sets.reive={neck="Adoulin's Refuge +1",}
 
     artifact = {}
-    artifact.head="Fighter's Mask"
-    artifact.body="Fighter's Lorica"
-    artifact.hands="Fighter's Mufflers"
-    artifact.legs="Fighter's Cuisses"
-    artifact.feet="Fighter's Calligae"
+    artifact.head="Pummeler's Mask +1"
+    artifact.body="Pummeler's Lorica +1"
+    artifact.hands="Pummeler's Mufflers +1"
+    artifact.legs="Pummeler's Cuisses +1"
+    artifact.feet="Pummeler's Calligae +1"
 
     relic={}
     relic.head="Warrior's Mask"         -- Warcry
@@ -43,13 +55,7 @@
     empy.legs="Ravager's Cuisses"
     empy.feet="Ravager's Calligae"      -- Retaliation
 
-    Cichol = {}                         -
-    Cichol.tp ={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}   --   Dye: Acc+10, Resin: DT-5%
-    Cichol.wsSTR = "Cichol's Mantle"    -- Thread: STR+20,  Dust: Acc/Att+20, Dye: STR+10, Sap: WSD+10%, Resin: PDT-10%
-    Cichol.wsVIT = "Cichol's Mantle"    -- Thread: VIT+20,  Dust: Acc/Att+20, Dye: VIT+10, Sap: WSD+10%, Resin: PDT-10%
-
     sets.tp["2Handed"] = {
-        sub="Duplus Grip",                      --> Utu Grip
         ammo="Aurgelmir Orb",                   --> Seething Bomblet        --> Ginsen              --> Coiste Bodhar
         head="Flamma Zucchetto +2",             --> Hjarrandi Helm          --> Boii Mask +2        --> Boii Mask +3
         neck="Sanctity Necklace",               --> War. Beads +1           --> War. Beads +2
@@ -59,7 +65,7 @@
         hands="Sulevia's Gauntlets +2",         --> Sakpata's Gauntlets
         left_ring="Flamma Ring",                --> Niqmaddu Ring
         right_ring="Petrov Ring",               --> Moonbeam Ring           --> Moonlight Ring
-        back=Cichol.tp,                         --> Cichol's Mantle dye 0/10, resin 0/5
+        back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, --> Cichol's Mantle dye 0/10, resin 0/5
         waist="Ioskeha Belt",                   --> Ioskeha Belt +1         --> Sailfi Belt +1
         legs="Sulevia's Cuisses +2",            --> Pumm. Cuisses +2        --> Pumm. Cuisses +3       
         feet="Flam. Gambieras +2",              --> Pumm. Calligae +2       --> Pumm. Calligae +3
@@ -76,6 +82,22 @@
         waist="Grunfeld Rope",
     }
 
+    sets.ws['Upheaval'] = {
+        ammo="Aurgelmir Orb",      
+        head="Flamma Zucchetto +2",
+        neck="Sanctity Necklace",  
+        left_ear="Ishvara Earring",
+        right_ear="Moonshade Earring", 
+        body="Flamma Korazin +1",   
+        hands="Sulevia's Gauntlets +2", 
+        left_ring="Karieyh Ring",
+        right_ring="Ifrit Ring",
+        back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
+        waist="Grunfeld Rope",  
+        legs="Sulevia's Cuisses +2",
+        feet="Sulevia's Leggings +1",
+    }
+
     -- Steel Cyclone STR 60% VIT 60%
     sets.ws['Steel Cyclone'] = {
         ammo="Aurgelmir Orb",                   --> Knobkierrie
@@ -87,7 +109,7 @@
         hands="Sulevia's Gauntlets +2",         --> Boii Mufflers +3
         left_ring="Karieyh Ring",               --> Regal Ring           
         right_ring="Ifrit Ring",                --> Epaminondas's Ring
-        back=Cichol.wsSTR,
+        back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
         waist="Grunfeld Rope",                  --> Sailfi Belt +1
         legs="Sulevia's Cuisses +2",            --> Boii Cuisses +3
         feet="Sulevia's Leggings +1",           --> Nyame Sollerets
@@ -188,11 +210,11 @@ function status_change(new,old)
 end
 
 function buff_change(name, gain, buff_details)
-    if name == 'Hasso' and not gain then
-        if autohasso == 1 then
-            send_command('input /ja Hasso <me>')
-        end
-    end
+--    if name == 'Hasso' and not gain then
+--        if autohasso == 1 then
+--            send_command('input /ja Hasso <me>')
+--        end
+--    end
 end
 
 function self_command(command)
