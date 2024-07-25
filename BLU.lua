@@ -105,7 +105,7 @@
     sets.precast.blue = set_combine(sets.precast.fastcast,{body="Mavi Mintan +1"})
 
     sets.midcast.BlueMagic = {
-        ammo="Ghastly Tathlum",
+        ammo="Ghastly Tathlum +1",
         head="Jhakri Coronal +2",
         neck="Mirage Stole +1",      
         left_ear="Friomisi Earring",
