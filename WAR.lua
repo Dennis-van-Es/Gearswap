@@ -23,7 +23,7 @@
     }
 
     sets.weapon['Trial']={
-        main="Sagaris",
+        main="Bonesplitter",
         sub="Duplus Grip",                      --> Utu Grip
     }
 
