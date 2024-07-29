@@ -99,7 +99,7 @@
         hands="Jhakri Cuffs +2",
         left_ring="Jhakri Ring",
         legs="Ayanmo Cosciales +2",
-        feet="Jhakri Pigaches +1",    
+        feet="Jhakri Pigaches +2",    
     }
 
     sets.precast.blue = set_combine(sets.precast.fastcast,{body="Mavi Mintan +1"})
@@ -116,8 +116,8 @@
         right_ring="Acumen Ring",
         back={ name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10','Spell interruption rate down-10%',}},
         waist="Eschan Stone",
-        legs="Jhakri Slops +1",
-        feet="Jhakri Pigaches +1",
+        legs="Jhakri Slops +2",
+        feet="Jhakri Pigaches +2",
     }
 
     -- Weaponskill Sets
@@ -152,12 +152,12 @@
         head="Adhemar Bonnet",
         neck="Mirage Stole +1",
         left_ear="Mache Earring",
-        right_ear="Cessance Earring",
+        right_ear="Moonshade Earring",
         body="Assimilator's Jubbah +2",
-        hands="Ayanmo Manopolas +2",
+        hands="Adhemar Wristbands",
         left_ring="Ramuh Ring",
-        right_ring="Rajas Ring",
-        back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+7','"Dbl.Atk."+10','Damage taken-3%',}},
+        right_ring="Karieyh Ring",
+        back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}},
         waist="Light Belt",
         legs="Adhemar Kecks",
         feet="Adhemar Gamaches",
@@ -172,8 +172,8 @@
         body="Jhakri Robe +2",       
         hands="Jhakri Cuffs +2",
         right_ring="Petrov Ring",
-        legs="Jhakri Slops +1",
-        feet="Jhakri Pigaches +1",
+        legs="Jhakri Slops +2",
+        feet="Jhakri Pigaches +2",
     }
     -- Sanguine Blade (STR 30% MND 50%)
     sets.ws["Sanguine Blade"] = {
@@ -184,8 +184,8 @@
         left_ring="Icesoul Ring",
         back={ name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10','Spell interruption rate down-10%',}},
         waist="Eschan Stone",
-        legs="Jhakri Slops +1",
-        feet="Jhakri Pigaches +1",
+        legs="Jhakri Slops +2",
+        feet="Jhakri Pigaches +2",
     }
     
     -- Expiacion (STR 30% INT 30% DEX 20%)

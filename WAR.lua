@@ -38,8 +38,8 @@
     artifact.head="Pummeler's Mask +1"
     artifact.body="Pummeler's Lorica +1"
     artifact.hands="Pummeler's Mufflers +1"
-    artifact.legs="Pummeler's Cuisses +1"
-    artifact.feet="Pummeler's Calligae +1"
+    artifact.legs="Pummeler's Cuisses +2"
+    artifact.feet="Pummeler's Calligae +2"
 
     relic={}
     relic.head="Warrior's Mask"         -- Warcry
@@ -67,11 +67,26 @@
         right_ring="Petrov Ring",               --> Moonbeam Ring           --> Moonlight Ring
         back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, --> Cichol's Mantle dye 0/10, resin 0/5
         waist="Ioskeha Belt",                   --> Ioskeha Belt +1         --> Sailfi Belt +1
-        legs="Sulevia's Cuisses +2",            --> Pumm. Cuisses +2        --> Pumm. Cuisses +3       
-        feet="Flam. Gambieras +2",              --> Pumm. Calligae +2       --> Pumm. Calligae +3
+        legs=artifact.legs,                     --> Pumm. Cuisses +3       
+        feet=artifact.feet,                     --> Pumm. Calligae +3
     }
         
-    sets.tp["SwordandBoard"] = {}    
+    sets.tp["SwordandBoard"] = {
+        ammo="Aurgelmir Orb",                   --> Seething Bomblet        --> Ginsen              --> Coiste Bodhar
+        head="Flamma Zucchetto +2",             --> Hjarrandi Helm          --> Boii Mask +2        --> Boii Mask +3
+        neck="Sanctity Necklace",               --> War. Beads +1           --> War. Beads +2
+        left_ear="Cessance Earring",            --> Schere Eaarring
+        right_ear="Mache Earring",              --> Brutal Earring          --> Boii Earring        --> Boii Earring +1
+        body="Flamma Korazin +1",               --> Valorous Mail           --> Agoge Lorica +2     --> Boii Lorica +2  --> Boii Lorica +3
+        hands="Sulevia's Gauntlets +2",         --> Sakpata's Gauntlets
+        left_ring="Flamma Ring",                --> Niqmaddu Ring
+        right_ring="Petrov Ring",               --> Moonbeam Ring           --> Moonlight Ring
+        back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, --> Cichol's Mantle dye 0/10, resin 0/5
+        waist="Ioskeha Belt",                   --> Ioskeha Belt +1         --> Sailfi Belt +1
+        legs=artifact.legs,                     --> Pumm. Cuisses +3       
+        feet=artifact.feet,                     --> Pumm. Calligae +3
+    }    
+    
     sets.tp["DualWield"] = {}
 
     -- Weapon Skill Sets
@@ -140,6 +155,7 @@
         head="Flamma Zucchetto +2",
         body="Flamma Korazin +1",
         hands="Flamma Manopolas +1",
+        left_ring="Karieyh Ring",
         legs="Flamma Dirs +1",
         feet="Flamma Gambieras +2",
     }
@@ -148,6 +164,7 @@
         head="Sulevia's Mask",
         body="Sulevia's Platemail +1",
         hands="Sulevia's Gauntlets +2",
+        left_ring="Karieyh Ring",
         legs="Sulevia's Cuisses +2",
         feet="Sulevia's Leggings +1",
     }
