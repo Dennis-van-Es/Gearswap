@@ -1,27 +1,30 @@
   function get_sets()
     define_spells() -- Fills variables with spellnames
 
-    auto_buf = 0
-
     tp_index = 1
     tp_set_names = {"Normal","DT"}
     weapon_index = 1
-    weapon_set_names = {"FullAttack","Magic"}
+    weapon_set_names = {"Thibron","Perfervid","Trial"}
     idle_index = 1
     idle_set_names = {"AF","Relic","Empyrean","DT"}
     learning = 0
-    
+    trialsword = "Schiavona"
+    --trialsword = "Bobilis"
+
     sets.idle = {}                  -- Leave this empty
     sets.tp = {}                    -- Leave this empty
-    sets.weapon = {}                --Leave this empty
+    sets.weapon = {}                -- Leave this empty
     sets.ws = {}                    -- Leave this empty
     sets.ja = {}                    -- Leave this empty
     sets.precast = {}               -- leave this empty    
     sets.midcast = {}               -- leave this empty    
     sets.aftercast = {}             -- leave this empty
 
-    sets.weapon['FullAttack'] = {main="Naegling",sub="Thibron"}
-    sets.weapon['Magic']={main="Naegling",sub="Perfervid Sword"}
+    sets.weapon['Thibron'] = {main="Naegling",sub="Thibron"}
+    sets.weapon['Perfervid']={main="Naegling",sub="Perfervid Sword"}
+    sets.weapon['Trial']={main=trialsword, sub="Perfervid Sword"}
+
+    sets.reive={neck="Adoulin's Refuge +1",}
 
     sets.idle["AF"] = {
         head="Assimilator's Keffiyeh",
@@ -89,7 +92,7 @@
         back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}},
     }
 
-    sets.tp.spellLearning = {neck="Adoulin's Refuge +1",hands="Assim. Bazu.",}
+    sets.tp.spellLearning = {hands="Assim. Bazu.",}
     
     -- Fast Cast
     sets.precast.fastcast = {
@@ -126,7 +129,7 @@
         body="Assimilator's Jubbah +2",
         hands="Jhakri Cuffs +2",
         left_ring="Karieyh Ring",
-        back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},   
+        back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}, 
     }
 
     -- Savage Blade (STR 50% MND 50%)
@@ -205,8 +208,7 @@
     send_command('bind f10 gs c toggle TP set')
     send_command('bind ^f10 gs c toggle idle set')
     send_command('bind ^f11 gs c toggle learning')
-    send_command('bind f11 gs c toggle weapon set') 
-    send_command('bind f9 gs c auto_buf')
+    send_command('bind f11 gs c toggle weapon set')     
 end
  
 function precast(spell)
@@ -232,8 +234,7 @@ end
 function midcast(spell)
     if sets.midcast[spell.name] then
         equip(sets.midcast[spell.name])
-    elseif spell.type == 'BlueMagic' then
-        --windower.add_to_chat(123,'Blue Magic detected: '..spell.english)
+    elseif spell.type == 'BlueMagic' then        
         if magic_spell:contains(spell.english) then
             equip(sets.midcast.BlueMagic)
         end
@@ -252,10 +253,11 @@ end
 function idle()
     if player.status=='Engaged' then
         equip(sets.tp[tp_set_names[tp_index]])
-    elseif player.status == 'Resting' then
-        equip(sets.idle.rest)
     else
-        equip(sets.idle['DT'])       
+        equip(sets.idle[idle_set_names[idle_index]])       
+    end
+    if buffactive['Reive Mark'] then
+        equip(sets.reive)
     end
 end
  
@@ -264,11 +266,7 @@ function status_change(new,old)
 end
 
 function buff_change(name, gain, buff_details)
-    if auto_buf == 1 and not gain then
-        if name == 'Attack Boost' then
-            send_command('input /ma "Nat. Meditation" <me>')
-        end
-    end
+    
 end
 
 function self_command(command)
@@ -276,7 +274,7 @@ function self_command(command)
         tp_index = tp_index + 1
         if tp_index > #tp_set_names then tp_index = 1 end
         windower.add_to_chat('----- TP Set changed to '..tp_set_names[tp_index]..' -----')
-        equip(sets.tp[tp_set_names[tp_index]])
+        idle()
     elseif command == 'toggle weapon set' then
         weapon_index = weapon_index + 1
         if weapon_index > #weapon_set_names then weapon_index = 1 end
@@ -286,25 +284,17 @@ function self_command(command)
         idle_index = idle_index + 1
         if idle_index > #idle_set_names then idle_index = 1 end
         windower.add_to_chat(123, '---- Idle set changed to '..idle_set_names[idle_index]..' ----')        
-        equip(sets.idle[idle_set_names[idle_index]])
+        idle()
     elseif command == 'toggle learning' then
         learning = learning + 1
         if learning > 1 then
              learning = 0
-             send_command('input //gs enable hands;wait .1;input //gs enable neck')
+             send_command('input //gs enable hands')
              windower.add_to_chat(123,'---- Learning off ----')
         else
             equip(sets.tp.spellLearning)
-            send_command('input //gs disable hands;wait .1;input //gs disable neck')
+            send_command('input //gs disable hands')
             windower.add_to_chat(123,'---- Learning on ----')
-        end
-    elseif command == 'auto_buf' then
-        if auto_buf == 0 then
-            auto_buf = 1
-            windower.add_to_chat(123, '---- Auto bufs on ----')
-        else 
-            auto_buf = 0
-            windower.add_to_chat(123, '---- Auto bufs off ----')
         end
     else
         windower.add_to_chat(123,'Unkown command')
@@ -317,8 +307,7 @@ function file_unload(file_name)
     send_command('unbind f10')
     send_command('unbind f11')
     send_command('unbind ^f10')
-    send_command('unbind ^f11')
-    send_command('unbind ^f9')
+    send_command('unbind ^f11')    
 end
 
 function define_spells()
