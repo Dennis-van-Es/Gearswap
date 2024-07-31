@@ -8,8 +8,7 @@
     idle_index = 1
     idle_set_names = {"AF","Relic","Empyrean","DT"}
     learning = 0
-    trialsword = "Schiavona"
-    --trialsword = "Bobilis"
+    trialsword = "Nobilis"
 
     sets.idle = {}                  -- Leave this empty
     sets.tp = {}                    -- Leave this empty
@@ -46,7 +45,7 @@
         head="Hashishin Kavuk",
         body="Mavi Mintan +1",
         hands="Mavi Bazubands +1",
-        leggs="Mavi Tayt +1",
+        legs="Mavi Tayt +1",
         feet="Mavi Basmak",
     }
 
