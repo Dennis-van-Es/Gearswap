@@ -78,17 +78,17 @@
     sets.tp['DT'] = {
         ammo="Staunch Tathlum",
         head="Ayanmo Zucchetto +2",
-        body="Ayanmo Corazza +2",
-        hands="Ayanmo Manopolas +2",
-        legs="Ayanmo Cosciales +2",
-        feet="Ayanmo Gambieras +2",
         neck="Mirage Stole +1",
-        waist="Windbuffet Belt +1",
         left_ear="Mache Earring",
         right_ear="Cessance Earring",
+        body="Ayanmo Corazza +2",
+        hands="Ayanmo Manopolas +2",
         left_ring="Ayanmo Ring",
         right_ring="Petrov Ring",
         back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}},
+        waist="Windbuffet Belt +1",
+        legs="Ayanmo Cosciales +2",
+        feet="Ayanmo Gambieras +2",
     }
 
     sets.tp.spellLearning = {hands="Assim. Bazu.",}
@@ -154,7 +154,7 @@
         head="Adhemar Bonnet",
         neck="Mirage Stole +1",
         left_ear="Mache Earring",
-        right_ear="Moonshade Earring",
+        right_ear="Odr Earring",
         body="Assimilator's Jubbah +2",
         hands="Adhemar Wristbands",
         left_ring="Ramuh Ring",

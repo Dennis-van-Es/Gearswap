@@ -12,7 +12,7 @@
     pup_configs = {"rng", "war", "mnk", "rdm", "whm", "blm", "pld", "overdrive","skillup"}
 
     tp_index = 1
-    tp_set_names = {"Master","Pup","Hybrid","Overdrive","DT"}
+    tp_set_names = {"Master","Pup","Hybrid","Overdrive","DT","CureBot"}
     
     sets.idle['Normal'] = {}
     sets.idle['DT'] = {}
@@ -90,6 +90,14 @@
         waist="Kuku Stone",
         legs="Tali'ah Seraweels +1",
         feet="Naga Kyahan",
+    }
+
+    sets.tp["CureBot"] = {
+        head={ name="Naga Somen", augments={'Pet: MP+75','Automaton: "Cure" potency +3%','Automaton: "Fast Cast"+2',}},
+        left_ear="Cessance Earring",
+        right_ear="Mache Earring",
+        hands={ name="Naga Tekko", augments={'Pet: MP+80','Automaton: "Cure" potency +4%','Automaton: "Fast Cast"+3',}},
+        feet={ name="Naga Kyahan", augments={'Pet: MP+80','Automaton: "Cure" potency +4%','Automaton: "Fast Cast"+3',}},
     }
 
     sets.tp['DT'] = {
