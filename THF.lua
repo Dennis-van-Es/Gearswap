@@ -23,7 +23,7 @@
         ammo="Aurgelmir Orb",
         head="Adhemar Bonnet",
         neck="Ishtar's Collar",
-        left_ear="Mache Earring",
+        left_ear="Odr Earring",
         right_ear="Cessance Earring",
         body="Mummu Jacket +2",
         hands="Adhemar Wristbands",
@@ -55,7 +55,8 @@
         head="Mummu Bonnet +1",
         body="Adhemar Jacket",
         hands="Adhemar Wristbands",
-        left_ear="Moonshade Earring",
+        left_ear="Odr Earring",
+        right_ear="Moonshade Earring",
         hands="Mummu Wristbands +1",
         left_ring="Mummu Ring",
         feet="Mummu Gamashes +1"
@@ -80,7 +81,8 @@
 
     sets.ws["Rudra's Storm"] = set_combine(sets.tp['Normal'],{
         head="Adhemar Bonnet",
-        left_ear="Moonshade Earring",
+        left_ear="Odr Earring",
+        right_ear="Moonshade Earring",
         body="Meghanada Cuirie +1",
         hands="Adhemar Wristbands",
         right_ring="Ramuh Ring",
