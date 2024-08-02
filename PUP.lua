@@ -12,7 +12,7 @@
     pup_configs = {"rng", "war", "mnk", "rdm", "whm", "blm", "pld", "overdrive","skillup"}
 
     tp_index = 1
-    tp_set_names = {"Master","Pup","Hybrid","Overdrive","DT"}
+    tp_set_names = {"Master","Pup","Hybrid","Overdrive","DT","CureBot"}
     
     sets.idle['Normal'] = {}
     sets.idle['DT'] = {}
@@ -92,6 +92,21 @@
         feet="Naga Kyahan",
     }
 
+    sets.tp["CureBot"] = {
+        head={ name="Naga Somen", augments={'Pet: MP+75','Automaton: "Cure" potency +3%','Automaton: "Fast Cast"+2',}},
+        neck="Ishtar's Collar",
+        left_ear="Cessance Earring",
+        right_ear="Mache Earring",
+        body="Naga Samue",
+        hands={ name="Naga Tekko", augments={'Pet: MP+80','Automaton: "Cure" potency +4%','Automaton: "Fast Cast"+3',}},
+        left_ring="Tali'ah Ring",
+        right_ring="Petrov Ring",
+        back="Visucius's Mantle",
+        waist="Kuku Stone",
+        legs="Tali'ah Seraweels +1",
+        feet={ name="Naga Kyahan", augments={'Pet: MP+80','Automaton: "Cure" potency +4%','Automaton: "Fast Cast"+3',}},
+    }
+
     sets.tp['DT'] = {
         hands={ name="Naga Tekko", augments={'STR+9','Accuracy+13','"Subtle Blow"+6',}},
     }
@@ -131,6 +146,7 @@
         neck="Buffoon's Collar",
         body="Cirque Farsetto +1",
         hands = "Puppetry Dastanas",
+        back="Dispersal Mantle",
     }
     sets.ja['Repair'] = {
         feet = "Puppetry Babouches",
