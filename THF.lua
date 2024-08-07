@@ -27,12 +27,12 @@
         right_ear="Cessance Earring",
         body="Mummu Jacket +2",
         hands="Adhemar Wristbands",
-        left_ring="Oneiros Ring",
+        left_ring="Mummu Ring",
         right_ring="Petrov Ring",
+        waist="Windbuffet Belt +1",
+        back="Toutasis's Cape",    
         legs="Meghanada Chausses +2",
         feet="Plunderer's Poulaines +1",
-        waist="Chuq'aba Belt",
-        back="Toutasis's Cape",    
     }
 
     sets.tp['TH'] = {
@@ -86,6 +86,7 @@
         body="Meghanada Cuirie +1",
         hands="Adhemar Wristbands",
         right_ring="Ramuh Ring",
+        waist="Grunfeld Rope",
         feet="Adhemar Gamashes",
     })
 

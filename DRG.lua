@@ -9,59 +9,119 @@
 
     autohasso = 0
     tp_index = 1
-    tp_set_names = {"Normal","DT"}
+    tp_set_names = {"Normal","Glass Cannon", "DT"}
 
     sets.idle.normal = {}    
     
-    sets.tp['Normal'] = {      
-        ammo="Aurgelmir Orb",
-        head="Flam. Zucchetto +1",
+    sets.tp['Glass Cannon'] = {
+        ammo="Aurgelmir Orb",               
+        head="Flamma Zucchetto +2",
         neck="Sanctity Necklace",
         left_ear="Cessance Earring",
         right_ear="Mache Earring",
         body="Flamma Korazin +1",
-        hands="Flam. Manopolas +1",
+        hands="Sulevia's Gauntlets +2",
         left_ring="Petrov Ring",
         right_ring="Enlivened Ring",
         back="Bleating Mantle",
-        waist="Windbuffet Belt +1",
-        legs="Flamma Dirs +1",
-        feet="Flam. Gambieras +1",
+        waist="Ioskeha Belt",
+        legs="Sulevia's Cuisses +2",
+        feet="Flamma Gambieras +2",
+    }
+
+    sets.tp['Normal'] = {      
+        ammo="Aurgelmir Orb",
+        head="Flamma Zucchetto +2",
+        neck="Sanctity Necklace",
+        left_ear="Cessance Earring",
+        right_ear="Mache Earring",
+        body="Flamma Korazin +1",
+        hands="Sulevia's Gauntlets +2",
+        left_ring="Petrov Ring",
+        right_ring="Enlivened Ring",
+        back="Bleating Mantle",
+        waist="Ioskeha Belt",
+        legs="Sulevia's Cuisses +2",
+        feet="Flamma Gambieras +2",
     }
 
     sets.tp['DT'] = {
         ammo="Staunch Tathlum",
-        head="Sulevia's Mask",
+        head="Flamma Zucchetto +2",
         neck="Ishtar's Collar",
         left_ear="Cessance Earring",
         right_ear="Mache Earring",
         body="Sulevia's Plate. +1",
-        hands="Sulevia's Gauntlets",
+        hands="Sulevia's Gauntlets +2",
         left_ring="Petrov Ring",
         right_ring="Enlivened Ring",
         back="Bleating Mantle",    
-        waist="Cetl Belt",
-        legs="Sulevia's Cuisses +1",
-        feet="Sulevia's Leggings +1",
+        waist="Ioskeha Belt",
+        legs="Sulevia's Cuisses +2",
+        feet="Flamma Gambieras +2",
     }
 
     -- Magic sets
     sets.precast.general = {}
     
     -- Weapon Skill Sets
-        -- Penta Thrust STR20 / DEX20
-    sets.ws['Penta Thrust'] = {}
+        
+    sets.ws['Stardiver'] = {
+        left_ear="Ishvara Earring",
+        right_ear="Moonshade Earring",
+        left_ring="Karieyh Ring",
+    }
+
+    sets.ws['Diarmuid'] = {
+        left_ear="Ishvara Earring",
+        right_ear="Moonshade Earring",
+        left_ring="Karieyh Ring",
+    }
+
+    sets.ws['Impuls Drive'] = {
+        left_ear="Ishvara Earring",
+        right_ear="Moonshade Earring",
+        left_ring="Karieyh Ring",
+    }
+
+    sets.ws["Cammlann's Torment"] = {
+        left_ear="Ishvara Earring",
+        right_ear="Moonshade Earring",
+        left_ring="Karieyh Ring",
+    }
+
+    sets.ws['Drakesbane'] = {
+        left_ear="Ishvara Earring",
+        right_ear="Moonshade Earring",
+        left_ring="Karieyh Ring",
+    }
+
+    sets.ws['Geirskogul'] = {
+        left_ear="Ishvara Earring",
+        left_ring="Karieyh Ring",
+    }
+
+    sets.ws['Leg Sweep'] = {
+        left_ear="Ishvara Earring",
+        left_ring="Karieyh Ring",
+    }
     
     -- Job Ability Sets
+    sets.ja['Call Wyvern'] = {}
     sets.ja['Jump'] = {}
-    sets.ja['High Jump'] = {}
-    sets.ja['Super Jump'] = {}
     sets.ja['Spirit Jump'] = {}
     sets.ja['Spirit Link'] = {}
-    sets.ja['Spirit Bond'] = {}
+    sets.ja['Angon'] = {}
+    sets.ja['Elemental Breath'] = {}
+    sets.ja['Healing Breath'] = {}
+    sets.ja['Ancient Circle'] = {}
+    
+    sets.ja['Spirit Surge'] = sets.ja['Call Wyvern']
+    sets.ja['High Jump'] = sets.ja['Jump']
+    sets.ja['Soul Jump'] = sets.ja['Jump']
 
     send_command('input /macro book 2;wait .1;input /macro set 1')
-    send_command('bind ^f10 gs c autohasso')
+    send_command('bind f9 gs c autohasso')
     send_command('bind f10 gs c toggle TP set')
 end
  
@@ -96,6 +156,12 @@ end
 function idle()
     if player.status=='Engaged' then
         equip(sets.tp[tp_set_names[tp_index]])
+         -- check if Hasso should be re-applied
+         if not buffactive['Hasso'] then
+            if autohasso == 1 then
+                send_command('input /ja Hasso <me>')
+            end
+        end
     else
         equip(sets.tp[tp_set_names[tp_index]])
     end
@@ -108,7 +174,9 @@ end
 function buff_change(name, gain, buff_details)
     if name == 'Hasso' and not gain then
         if autohasso then
-            send_command('input /ja Hasso <me>')
+            if player.status=='Engaged' then
+                send_command('input /ja Hasso <me>')
+            end
         end
     end
 end
@@ -133,5 +201,5 @@ end
 
 function user_unload()
     send_command('unbind f10')
-    send_command('unbind ^f10')    
+    send_command('unbind f9')    
 end

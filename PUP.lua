@@ -18,36 +18,42 @@
     sets.idle['DT'] = {}
 
     sets.tp['Master'] = {
-        head="Tali'ah Turban +1",
+        ranged="Animator P",
+        ammo="Automat. Oil +3",
+        head="Tali'ah Turban +2",
         neck="Ishtar's Collar",
         left_ear="Cessance Earring",
         right_ear="Mache Earring",
-        body="Tali'ah Manteel +2",
-        hands="Herculean Gloves",
+        body={ name="Taeon Tabard", augments={'Accuracy+25','"Counter"+1','STR+10',}},
+        hands={ name="Herculean Gloves", augments={'Attack+29','"Triple Atk."+3',}},
         left_ring="Tali'ah Ring",
         right_ring="Petrov Ring",
         back="Visucius's Mantle",
-        waist="Kuku Stone",
-        legs="Tali'ah Seraweels +1",
-        feet="Naga Kyahan",
+        waist="Windbuffet Belt +1",
+        legs={ name="Taeon Tights", augments={'Accuracy+19','Weapon Skill Acc.+18','STR+6 AGI+6',}},
+        feet={ name="Herculean Boots", augments={'Attack+14','"Triple Atk."+3','DEX+10',}},
     }
 
     sets.tp['Pup'] = {
-        head="Tali'ah Turban +1",
+        ranged="Animator P",
+        ammo="Automat. Oil +3",
+        head="Tali'ah Turban +2",
         neck="Ishtar's Collar",
         left_ear="Kyrene's Earring",
         right_ear="Mache Earring",
         body="Tali'ah Manteel +2",
-        hands="Tali'ah Gages +1",
+        hands="Tali'ah Gages +2",
         left_ring="Tali'ah Ring",
         right_ring="Petrov Ring",
         back="Visucius's Mantle",
         waist="Kuku Stone",
-        legs="Tali'ah Seraweels +1",
+        legs="Tali'ah Seraweels +2",
         feet="Naga Kyahan",
     }
 
     sets.tp['Hybrid'] = {
+        ranged="Animator P",
+        ammo="Automat. Oil +3",
         head="Tali'ah Turban +1",
         neck="Ishtar's Collar",
         left_ear="Cessance Earring",
@@ -58,27 +64,31 @@
         right_ring="Petrov Ring",
         back="Visucius's Mantle",
         waist="Kuku Stone",
-        legs="Tali'ah Seraweels +1",
+        legs="Tali'ah Seraweels +2",
         feet="Naga Kyahan",
     }
 
     sets.tp['Overdrive'] = {
-        head="Tali'ah Turban +1",
+        ranged="Animator P",
+        ammo="Automat. Oil +3",
+        head="Tali'ah Turban +2",
         neck="Ishtar's Collar",
         left_ear="Cessance Earring",
         right_ear="Mache Earring",
         body="Tali'ah Manteel +2",
-        hands="Tali'ah Gages +1",
+        hands="Tali'ah Gages +2",
         left_ring="Tali'ah Ring",
         right_ring="Petrov Ring",
         back="Visucius's Mantle",
         waist="Kuku Stone",
-        legs="Tali'ah Seraweels +1",
+        legs="Tali'ah Seraweels +2",
         feet="Naga Kyahan",
     }
 
     sets.tp['DT'] = {
-        head="Tali'ah Turban +1",
+        ranged="Animator P",
+        ammo="Automat. Oil +3",
+        head="Tali'ah Turban +2",
         neck="Ishtar's Collar",
         left_ear="Cessance Earring",
         right_ear="Mache Earring",
@@ -88,22 +98,24 @@
         right_ring="Petrov Ring",
         back="Visucius's Mantle",
         waist="Kuku Stone",
-        legs="Tali'ah Seraweels +1",
+        legs="Tali'ah Seraweels +2",
         feet="Naga Kyahan",
     }
 
     sets.tp["CureBot"] = {
+        ranged="Animator P",
+        ammo="Automat. Oil +3",
         head={ name="Naga Somen", augments={'Pet: MP+75','Automaton: "Cure" potency +3%','Automaton: "Fast Cast"+2',}},
         neck="Ishtar's Collar",
         left_ear="Cessance Earring",
         right_ear="Mache Earring",
-        body="Naga Samue",
+        body={ name="Naga Samue", augments={'Pet: MP+80','Automaton: "Cure" potency +4%','Automaton: "Fast Cast"+3',}},
         hands={ name="Naga Tekko", augments={'Pet: MP+80','Automaton: "Cure" potency +4%','Automaton: "Fast Cast"+3',}},
         left_ring="Tali'ah Ring",
         right_ring="Petrov Ring",
         back="Visucius's Mantle",
         waist="Kuku Stone",
-        legs="Tali'ah Seraweels +1",
+        legs={ name="Naga Hakama", augments={'Pet: MP+80','Automaton: "Cure" potency +4%','Automaton: "Fast Cast"+3',}},
         feet={ name="Naga Kyahan", augments={'Pet: MP+80','Automaton: "Cure" potency +4%','Automaton: "Fast Cast"+3',}},
     }
 
@@ -111,11 +123,15 @@
         hands={ name="Naga Tekko", augments={'STR+9','Accuracy+13','"Subtle Blow"+6',}},
     }
 
+    sets.tp['TH'] = { ammo = "Perfect Lucky Egg",}
+
     -- Weapon Skill Sets
     sets.ws['Stringing Pummel'] = {
+        ranged="Animator P",
+        ammo="Automat. Oil +3",
         head={ name="Taeon Chapeau", augments={'Accuracy+25','"Dual Wield"+2','Weapon skill damage +3%',}},
         body="Tali'ah Manteel +2",
-        hands="Tali'ah Gages +1",
+        hands="Tali'ah Gages +2",
         legs={ name="Taeon Tights", augments={'Accuracy+19','Weapon Skill Acc.+18','STR+6 AGI+6',}},
         feet="Tali'ah Crackows +1",
         neck="Ishtar's Collar",
@@ -128,6 +144,8 @@
     }
 
     sets.ws['Howling Fist'] = {
+        ranged="Animator P",
+        ammo="Automat. Oil +3",
         head={ name="Taeon Chapeau", augments={'Accuracy+25','"Dual Wield"+2','Weapon skill damage +3%',}},
         body="Tali'ah Manteel +2",
         hands={ name="Naga Tekko", augments={'STR+9','Accuracy+13','"Subtle Blow"+6',}},
@@ -155,7 +173,7 @@
     send_command('input /macro book 1;wait .1;input /macro set 1;wait .1;input //lua load autocontrol;wait .1;input //lua load autopup')
     send_command('bind f10 gs c toggle TP set')
     send_command('bind f11 gs c toggle pup config')
-    send_command('bind ^f11 gs c set pup')
+    send_command('bind ^p gs c set pup')
 end
  
 function precast(spell)
@@ -164,6 +182,8 @@ function precast(spell)
     elseif spell.prefix == '/jobability' then
         if sets.ja[spell.name] then
             equip(sets.ja[spell.name])
+        elseif spell.name == 'Provoke' then
+            equip(sets.tp['TH'])
         end
     elseif spell.prefix == '/weaponskill' then
         if sets.ws[spell.name] then
@@ -221,7 +241,7 @@ function file_unload()
     send_command('input //lua unload autopup;wait .1;input //lua unload autocontrol')
     send_command('unbind f10')
     send_command('unbind f11')
-    send_command('unbind ^f11')
+    send_command('unbind ^p')
 end
 
 function generatemaneuvers()
