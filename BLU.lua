@@ -70,7 +70,7 @@
         left_ring="Ayanmo Ring",
         right_ring="Petrov Ring",
         back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}},
-        waist="Windbuffet Belt +1",
+        waist="Sailfi Belt +1",
         legs="Taeon Tights",
         feet="Herculean Boots",
     }
@@ -143,7 +143,7 @@
         left_ring="Karieyh Ring",
         right_ring="Ifrit Ring",
         back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
-        waist="Thunder Belt",
+        waist="Sailfi Belt +1",
         legs="Ayanmo Cosciales +2",
         feet="Ayanmo Gambieras +2",
     }
@@ -201,6 +201,7 @@
         left_ring="Karieyh Ring",
         right_ring="Rajas Ring",
         back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+        waist="Sailfi Belt +1",
     }
 
     send_command('input /macro book 11;wait .1;input /macro set 1;wait .1;input //lua load blualert;wait .1;input //lua load azuresets')

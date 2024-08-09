@@ -24,7 +24,7 @@
         left_ring="Petrov Ring",
         right_ring="Enlivened Ring",
         back="Bleating Mantle",
-        waist="Ioskeha Belt",
+        waist="Sailfi Belt +1",
         legs="Sulevia's Cuisses +2",
         feet="Flamma Gambieras +2",
     }
@@ -40,7 +40,7 @@
         left_ring="Petrov Ring",
         right_ring="Enlivened Ring",
         back="Bleating Mantle",
-        waist="Ioskeha Belt",
+        waist="Sailfi Belt +1",
         legs="Sulevia's Cuisses +2",
         feet="Flamma Gambieras +2",
     }
@@ -56,7 +56,7 @@
         left_ring="Petrov Ring",
         right_ring="Enlivened Ring",
         back="Bleating Mantle",    
-        waist="Ioskeha Belt",
+        waist="Sailfi Belt +1",
         legs="Sulevia's Cuisses +2",
         feet="Flamma Gambieras +2",
     }
@@ -76,12 +76,14 @@
         left_ear="Ishvara Earring",
         right_ear="Moonshade Earring",
         left_ring="Karieyh Ring",
+        waist="Sailfi Belt +1",
     }
 
     sets.ws['Impuls Drive'] = {
         left_ear="Ishvara Earring",
         right_ear="Moonshade Earring",
         left_ring="Karieyh Ring",
+        waist="Sailfi Belt +1",
     }
 
     sets.ws["Cammlann's Torment"] = {
@@ -94,11 +96,13 @@
         left_ear="Ishvara Earring",
         right_ear="Moonshade Earring",
         left_ring="Karieyh Ring",
+        waist="Sailfi Belt +1",
     }
 
     sets.ws['Geirskogul'] = {
         left_ear="Ishvara Earring",
         left_ring="Karieyh Ring",
+        waist="Sailfi Belt +1",
     }
 
     sets.ws['Leg Sweep'] = {

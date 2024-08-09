@@ -45,6 +45,7 @@
         head="Meghanada Visor +1",
         body="Meghanada Cuirie +1",
         hands="Meghanada Gloves +1",
+        waist="Sailfi Belt +1",
         legs="Mummu Kecks +1",
         feet="Meghanada Jambeaux +1",
     }
@@ -63,6 +64,7 @@
     }
 
     sets.ws['Aeolian Edge'] = {
+        ammo="Seething Bomblet +1",
         left_ear="Moonshade Earring",
         right_ear="Friomisi Earring",
         right_ring="Acumen Ring",
