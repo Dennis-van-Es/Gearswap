@@ -14,7 +14,7 @@
     idle_index = 1
     idle_set_names = {"Lockstyle","DT"}
     weapon_index = 1
-    weapon_set_names = {"GreatAxe","Trial"}
+    weapon_set_names = {"GreatAxe","Trial","SwordandBoard"}
     autohasso = 0
     
     sets.weapon['GreatAxe']={
@@ -29,7 +29,7 @@
 
     sets.weapon['SwordandBoard'] = {
         main="Naegling",
-        sub="Ark Shield",
+        sub="Koenig Shield",
     }
 
     sets.reive={neck="Adoulin's Refuge +1",}
@@ -38,12 +38,12 @@
     artifact.head="Pummeler's Mask +1"
     artifact.body="Pummeler's Lorica +1"
     artifact.hands="Pummeler's Mufflers +1"
-    artifact.legs="Pummeler's Cuisses +2"
-    artifact.feet="Pummeler's Calligae +2"
+    artifact.legs="Pummeler's Cuisses +2"                   --> Upgrade
+    artifact.feet="Pummeler's Calligae +2"                  --> Upgrade
 
     relic={}
-    relic.head="Warrior's Mask"         -- Warcry
-    relic.body="Warrior's Lorica"       -- Aggressor
+    relic.head="Warrior's Mask"         -- Warcry           --> Upgrade to Agoge
+    relic.body="Warrior's Lorica"       -- Aggressor        --> Upgrade tp Agoge
     relic.hands="Warrior's Mufflers"    --
     relic.legs="Warrior's Cuisses"
     relic.feet="Warrior's Calligae"     -- Berserk
@@ -56,11 +56,11 @@
     empy.feet="Ravager's Calligae"      -- Retaliation
 
     sets.tp["2Handed"] = {
-        ammo="Aurgelmir Orb",                   --> Seething Bomblet        --> Ginsen              --> Coiste Bodhar
+        ammo="Seething Bomblet +1",             --> Ginsen              --> Coiste Bodhar
         head="Flamma Zucchetto +2",             --> Hjarrandi Helm          --> Boii Mask +2        --> Boii Mask +3
-        neck="Sanctity Necklace",               --> War. Beads +1           --> War. Beads +2
+        neck="War. Beads +1",
         left_ear="Cessance Earring",            --> Schere Eaarring
-        right_ear="Mache Earring",              --> Brutal Earring          --> Boii Earring        --> Boii Earring +1
+        right_ear="Brutal Earring",             --> Boii Earring        --> Boii Earring +1
         body="Flamma Korazin +1",               --> Valorous Mail           --> Agoge Lorica +2     --> Boii Lorica +2  --> Boii Lorica +3
         hands="Sulevia's Gauntlets +2",         --> Sakpata's Gauntlets
         left_ring="Flamma Ring",                --> Niqmaddu Ring
@@ -72,11 +72,11 @@
     }
         
     sets.tp["SwordandBoard"] = {
-        ammo="Aurgelmir Orb",                   --> Seething Bomblet        --> Ginsen              --> Coiste Bodhar
+        ammo="Seething Bomblet +1",             --> Ginsen              --> Coiste Bodhar
         head="Flamma Zucchetto +2",             --> Hjarrandi Helm          --> Boii Mask +2        --> Boii Mask +3
-        neck="Sanctity Necklace",               --> War. Beads +1           --> War. Beads +2
+        neck="War. Beads +1",
         left_ear="Cessance Earring",            --> Schere Eaarring
-        right_ear="Mache Earring",              --> Brutal Earring          --> Boii Earring        --> Boii Earring +1
+        right_ear="Brutal Earring",             --> Boii Earring        --> Boii Earring +1
         body="Flamma Korazin +1",               --> Valorous Mail           --> Agoge Lorica +2     --> Boii Lorica +2  --> Boii Lorica +3
         hands="Sulevia's Gauntlets +2",         --> Sakpata's Gauntlets
         left_ring="Flamma Ring",                --> Niqmaddu Ring
@@ -97,27 +97,11 @@
         waist="Grunfeld Rope",
     }
 
-    sets.ws['Upheaval'] = {
-        ammo="Aurgelmir Orb",      
-        head="Flamma Zucchetto +2",
-        neck="Sanctity Necklace",  
-        left_ear="Ishvara Earring",
-        right_ear="Moonshade Earring", 
-        body="Flamma Korazin +1",   
-        hands="Sulevia's Gauntlets +2", 
-        left_ring="Karieyh Ring",
-        right_ring="Ifrit Ring",
-        back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
-        waist="Grunfeld Rope",  
-        legs="Sulevia's Cuisses +2",
-        feet="Sulevia's Leggings +1",
-    }
-
     -- Steel Cyclone STR 60% VIT 60%
     sets.ws['Steel Cyclone'] = {
         ammo="Aurgelmir Orb",                   --> Knobkierrie
         head="Skormoth Mask",                   --> Nyame Helm
-        neck="Sanctity Necklace",               --> War. Beads +2
+        neck="War. Beads +1",
         left_ear="Ishvara Earring",             --> Thrud Earring
         right_ear="Moonshade Earring", 
         body="Flamma Korazin +1",               --> Nyame Mail
@@ -125,10 +109,42 @@
         left_ring="Karieyh Ring",               --> Regal Ring           
         right_ring="Ifrit Ring",                --> Epaminondas's Ring
         back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
-        waist="Grunfeld Rope",                  --> Sailfi Belt +1
+        waist="Sailfi Belt +1",
         legs="Sulevia's Cuisses +2",            --> Boii Cuisses +3
         feet="Sulevia's Leggings +1",           --> Nyame Sollerets
-    }    
+    }
+
+    sets.ws['Upheaval'] = {
+        ammo="Aurgelmir Orb",      
+        head="Flamma Zucchetto +2",
+        neck="War. Beads +1",  
+        left_ear="Ishvara Earring",
+        right_ear="Moonshade Earring", 
+        body="Flamma Korazin +1",   
+        hands="Sulevia's Gauntlets +2", 
+        left_ring="Karieyh Ring",
+        right_ring="Ifrit Ring",
+        back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
+        waist="Sailfi Belt +1",  
+        legs="Sulevia's Cuisses +2",
+        feet="Sulevia's Leggings +1",
+    }
+    
+    sets.ws['Savage Blade'] = {
+        ammo="Aurgelmir Orb",                  
+        head="Skormoth Mask",                   
+        neck="War. Beads +1",               
+        left_ear="Moondshade Earring",            
+        right_ear="Ishvara Earring", 
+        body="Flamma Korazin +1",                      
+        hands="Sulevia's Gauntlets +2",         
+        left_ring="Rajas Ring",                    
+        right_ring="Petrov Ring",                
+        back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
+        waist="Grunfeld Rope",                  
+        legs="Sulevia's Cuisses +2",            
+        feet="Sulevia's Leggings +1",           
+    }
 
     -- Job Ability Sets
     sets.ja['Warcry'] = { 
@@ -227,11 +243,7 @@ function status_change(new,old)
 end
 
 function buff_change(name, gain, buff_details)
---    if name == 'Hasso' and not gain then
---        if autohasso == 1 then
---            send_command('input /ja Hasso <me>')
---        end
---    end
+
 end
 
 function self_command(command)
