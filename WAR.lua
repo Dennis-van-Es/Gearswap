@@ -29,7 +29,7 @@
 
     sets.weapon['SwordandBoard'] = {
         main="Naegling",
-        sub="Koenig Shield",
+        sub="Blurred Shield",
     }
 
     sets.reive={neck="Adoulin's Refuge +1",}
@@ -129,6 +129,22 @@
         legs="Sulevia's Cuisses +2",
         feet="Sulevia's Leggings +1",
     }
+
+    sets.ws["King's Justice"] = {
+        ammo="Aurgelmir Orb",      
+        head="Flamma Zucchetto +2",
+        neck="War. Beads +1",  
+        left_ear="Ishvara Earring",
+        right_ear="Moonshade Earring", 
+        body="Flamma Korazin +1",   
+        hands="Sulevia's Gauntlets +2", 
+        left_ring="Karieyh Ring",
+        right_ring="Ifrit Ring",
+        back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
+        waist="Sailfi Belt +1",  
+        legs="Sulevia's Cuisses +2",
+        feet="Sulevia's Leggings +1",
+    }
     
     sets.ws['Savage Blade'] = {
         ammo="Aurgelmir Orb",                  
@@ -141,7 +157,7 @@
         left_ring="Rajas Ring",                    
         right_ring="Petrov Ring",                
         back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
-        waist="Grunfeld Rope",                  
+        waist="Sailfi Belt +1",                  
         legs="Sulevia's Cuisses +2",            
         feet="Sulevia's Leggings +1",           
     }

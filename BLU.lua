@@ -42,7 +42,7 @@
     }
 
     sets.idle["Empyrean"] = {
-        head="Hashishin Kavuk",
+        head="Hashishin Kavuk +1",
         body="Mavi Mintan +1",
         hands="Mavi Bazubands +1",
         legs="Mavi Tayt +1",
@@ -153,7 +153,7 @@
         ammo="Aurgelmir Orb",
         head="Adhemar Bonnet",
         neck="Mirage Stole +1",
-        left_ear="Mache Earring",
+        left_ear="Moonshade Earring",
         right_ear="Odr Earring",
         body="Assimilator's Jubbah +2",
         hands="Adhemar Wristbands",
