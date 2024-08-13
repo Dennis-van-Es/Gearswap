@@ -14,7 +14,7 @@
     idle_index = 1
     idle_set_names = {"Lockstyle","DT"}
     weapon_index = 1
-    weapon_set_names = {"GreatAxe","Trial","SwordandBoard"}
+    weapon_set_names = {"GreatAxe","Trial","SwordandBoard","DualWield"}
     autohasso = 0
     
     sets.weapon['GreatAxe']={
@@ -30,6 +30,11 @@
     sets.weapon['SwordandBoard'] = {
         main="Naegling",
         sub="Blurred Shield",
+    }
+
+    sets.weapon['DualWield'] = {
+        main="Naegling",
+        sub="Perfervid Sword",
     }
 
     sets.reive={neck="Adoulin's Refuge +1",}
@@ -87,7 +92,21 @@
         feet=artifact.feet,                     --> Pumm. Calligae +3
     }    
     
-    sets.tp["DualWield"] = {}
+    sets.tp["DualWield"] = {
+        ammo="Seething Bomblet +1",             --> Ginsen              --> Coiste Bodhar
+        head="Flamma Zucchetto +2",             --> Hjarrandi Helm          --> Boii Mask +2        --> Boii Mask +3
+        neck="War. Beads +1",
+        left_ear="Cessance Earring",            --> Schere Eaarring
+        right_ear="Brutal Earring",             --> Boii Earring        --> Boii Earring +1
+        body="Flamma Korazin +1",               --> Valorous Mail           --> Agoge Lorica +2     --> Boii Lorica +2  --> Boii Lorica +3
+        hands="Sulevia's Gauntlets +2",         --> Sakpata's Gauntlets
+        left_ring="Flamma Ring",                --> Niqmaddu Ring
+        right_ring="Petrov Ring",               --> Moonbeam Ring           --> Moonlight Ring
+        back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}, --> Cichol's Mantle dye 0/10, resin 0/5
+        waist="Ioskeha Belt",                   --> Ioskeha Belt +1         --> Sailfi Belt +1
+        legs=artifact.legs,                     --> Pumm. Cuisses +3       
+        feet=artifact.feet,                     --> Pumm. Calligae +3
+    }
 
     -- Weapon Skill Sets
     sets.ws.base = {
@@ -200,7 +219,6 @@
         legs="Sulevia's Cuisses +2",
         feet="Sulevia's Leggings +1",
     }
-
     send_command('input /macro book 6;wait .1;input /macro set 1')
     send_command('bind f9 gs c autohasso')
     send_command('bind f10 gs c toggle TP set')
@@ -286,6 +304,13 @@ function self_command(command)
         end
         windower.add_to_chat(123, ' ----- Weapon Set changed to '..weapon_set_names[weapon_index]..' -----')
         equip(sets.weapon[weapon_set_names[weapon_index]])
+        if (weapon_index == 1) or (weapon_index == 2) then
+            tp_index = 1
+        elseif weapon_index == 3 then
+            tp_index =2
+        end
+        windower.add_to_chat(123, ' ----- TP set changed to '..tp_set_names[tp_index]..' -----')
+        equip(sets.tp[tp_set_names[tp_index]])
     end
     if command == 'autohasso' then
         if autohasso == 0 then
@@ -295,6 +320,26 @@ function self_command(command)
             autohasso = 0
             windower.add_to_chat(123, '---- Auto Hasso off ----')
         end
+    end
+end
+
+function sub_job_change(new,old)
+    if new == 'SAM' then
+        send_command('input /macro book 6;wait .1;input /macro set 1')
+        tp_index = 1        -- 2 handed
+        weapon_index = 1    -- great axe
+    elseif new == 'DRG' then
+        send_command('input /macro book 6;wait .1;input /macro set 2')
+        tp_index = 2        -- SwordandBoard
+        weapon_index = 3    -- SwordandBoard
+    elseif new == 'NIN' then
+        send_command('input /macro book 6;wait .1;input /macro set 3')
+        tp_index = 3        -- DualWield
+        weapon_index = 3    -- xxx
+    elseif new == 'DNC' then
+        send_command('input /macro book 6;wait .1;input /macro set 1')
+        tp_index = 3        -- DualWield
+        weapon_index = 3    -- xxx
     end
 end
 
