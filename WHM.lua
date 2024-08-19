@@ -9,36 +9,16 @@
  
     sets.idle.normal = {}    
     
-    sets.melee.normal = {
-        main        = "",
-        sub         = "",
-        range       = "",
-        ammo        = "",
-        head        = "",
-        neck        = "",
-        ear1        = "",
-        ear2        = "",      
-        body        = "",
-        hands       = "",
-        ring1       = "",
-        ring2       = "",
-        back        = "",
-        waist       = "",
-        legs        = "",
-        feet        = "",        
-    }    
-    -- Weapon Skill Sets
-    sets.ws['Red Lotus Blade'] = {}    
-
+    
     -- Job Ability Sets
-    sets.ja['Elemental Seal'] = {}
+    sets.ja['Divine Seal'] = {}
 
     -- Casting Sets
     sets.precast.fastcast = {}
 
     sets.midcast.cure = {}        
-    sets.midcast.mind = {ring2 = "Lapis Lazuli Ring"}
-    sets.midcast.int = {}
+    
+    
     sets.midcast.divine = {}
     sets.midcast.enhancing = {}
     sets.midcast.dark = {}
@@ -51,12 +31,7 @@ function precast(spell)
         if sets.ja[spell.name] then
             equip(sets.ja[spell.name])
         end
-    elseif spell.prefix == '/weaponskill' then
-        if sets.ws['spell.name'] then
-            equip(sets.ws['spell.name'])
-        end
-    end
-    if spell.prefix == '/magic' then
+    elseif spell.prefix == '/magic' then
         equip(sets.precast.fastcast)
     end
 end
