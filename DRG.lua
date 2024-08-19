@@ -73,34 +73,34 @@
     }
 
     sets.ws['Diarmuid'] = {
-        left_ear="Ishvara Earring",
+        left_ear="Thrud Earring",
         right_ear="Moonshade Earring",
         left_ring="Karieyh Ring",
         waist="Sailfi Belt +1",
     }
 
     sets.ws['Impuls Drive'] = {
-        left_ear="Ishvara Earring",
+        left_ear="Thrud Earring",
         right_ear="Moonshade Earring",
         left_ring="Karieyh Ring",
         waist="Sailfi Belt +1",
     }
 
     sets.ws["Cammlann's Torment"] = {
-        left_ear="Ishvara Earring",
+        left_ear="Thrud Earring",
         right_ear="Moonshade Earring",
         left_ring="Karieyh Ring",
     }
 
     sets.ws['Drakesbane'] = {
-        left_ear="Ishvara Earring",
+        left_ear="Thrud Earring",
         right_ear="Moonshade Earring",
         left_ring="Karieyh Ring",
         waist="Sailfi Belt +1",
     }
 
     sets.ws['Geirskogul'] = {
-        left_ear="Ishvara Earring",
+        left_ear="Thrud Earring",
         left_ring="Karieyh Ring",
         waist="Sailfi Belt +1",
     }

@@ -15,16 +15,16 @@
     idle_set_names = {"Lockstyle","DT"}
     weapon_index = 1
     weapon_set_names = {"GreatAxe","Trial","SwordandBoard","DualWield"}
-    autohasso = 0
+    autobuff = 0
     
     sets.weapon['GreatAxe']={
         main="Instigator",
-        sub="Duplus Grip",                      --> Utu Grip
+        sub="Utu Grip",
     }
 
     sets.weapon['Trial']={
         main="Bonesplitter",
-        sub="Duplus Grip",                      --> Utu Grip
+        sub="Utu Grip",
     }
 
     sets.weapon['SwordandBoard'] = {
@@ -41,13 +41,13 @@
 
     artifact = {}
     artifact.head="Pummeler's Mask +1"
-    artifact.body="Pummeler's Lorica +1"
+    artifact.body="Pummeler's Lorica +1"                    --> Upgrade
     artifact.hands="Pummeler's Mufflers +1"
     artifact.legs="Pummeler's Cuisses +2"                   --> Upgrade
     artifact.feet="Pummeler's Calligae +2"                  --> Upgrade
 
     relic={}
-    relic.head="Warrior's Mask"         -- Warcry           --> Upgrade to Agoge
+    relic.head="Agoge Mask +1"             -- Warcry           --> Upgrade to Agoge
     relic.body="Warrior's Lorica"       -- Aggressor        --> Upgrade tp Agoge
     relic.hands="Warrior's Mufflers"    --
     relic.legs="Warrior's Cuisses"
@@ -56,7 +56,7 @@
     empy={}
     empy.head="Ravager's Mask"
     empy.body="Ravager's Lorica"        -- Blood Rage
-    empy.hands="Ravager's Mufflers"     -- Restraint
+    empy.hands="Ravager's Mufflers +1"     -- Restraint
     empy.legs="Ravager's Cuisses"
     empy.feet="Ravager's Calligae"      -- Retaliation
 
@@ -65,7 +65,7 @@
         head="Flamma Zucchetto +2",             --> Hjarrandi Helm          --> Boii Mask +2        --> Boii Mask +3
         neck="War. Beads +1",
         left_ear="Cessance Earring",            --> Schere Eaarring
-        right_ear="Brutal Earring",             --> Boii Earring        --> Boii Earring +1
+        right_ear="Boii Earring",               --> Boii Earring +1
         body="Flamma Korazin +1",               --> Valorous Mail           --> Agoge Lorica +2     --> Boii Lorica +2  --> Boii Lorica +3
         hands="Sulevia's Gauntlets +2",         --> Sakpata's Gauntlets
         left_ring="Flamma Ring",                --> Niqmaddu Ring
@@ -81,7 +81,7 @@
         head="Flamma Zucchetto +2",             --> Hjarrandi Helm          --> Boii Mask +2        --> Boii Mask +3
         neck="War. Beads +1",
         left_ear="Cessance Earring",            --> Schere Eaarring
-        right_ear="Brutal Earring",             --> Boii Earring        --> Boii Earring +1
+        right_ear="Boii Earring",               --> Boii Earring +1
         body="Flamma Korazin +1",               --> Valorous Mail           --> Agoge Lorica +2     --> Boii Lorica +2  --> Boii Lorica +3
         hands="Sulevia's Gauntlets +2",         --> Sakpata's Gauntlets
         left_ring="Flamma Ring",                --> Niqmaddu Ring
@@ -97,7 +97,7 @@
         head="Flamma Zucchetto +2",             --> Hjarrandi Helm          --> Boii Mask +2        --> Boii Mask +3
         neck="War. Beads +1",
         left_ear="Cessance Earring",            --> Schere Eaarring
-        right_ear="Brutal Earring",             --> Boii Earring        --> Boii Earring +1
+        right_ear="Boii Earring",               --> Boii Earring +1
         body="Flamma Korazin +1",               --> Valorous Mail           --> Agoge Lorica +2     --> Boii Lorica +2  --> Boii Lorica +3
         hands="Sulevia's Gauntlets +2",         --> Sakpata's Gauntlets
         left_ring="Flamma Ring",                --> Niqmaddu Ring
@@ -118,10 +118,10 @@
 
     -- Steel Cyclone STR 60% VIT 60%
     sets.ws['Steel Cyclone'] = {
-        ammo="Aurgelmir Orb",                   --> Knobkierrie
+        ammo="Aurgelmir Orb",             --> Knobkierrie
         head="Skormoth Mask",                   --> Nyame Helm
         neck="War. Beads +1",
-        left_ear="Ishvara Earring",             --> Thrud Earring
+        left_ear="Thrud Earring",   
         right_ear="Moonshade Earring", 
         body="Flamma Korazin +1",               --> Nyame Mail
         hands="Sulevia's Gauntlets +2",         --> Boii Mufflers +3
@@ -134,13 +134,13 @@
     }
 
     sets.ws['Upheaval'] = {
-        ammo="Aurgelmir Orb",      
+        ammo="Aurgelmir Orb",       
         head="Flamma Zucchetto +2",
         neck="War. Beads +1",  
-        left_ear="Ishvara Earring",
+        left_ear="Thrud Earring",
         right_ear="Moonshade Earring", 
         body="Flamma Korazin +1",   
-        hands="Sulevia's Gauntlets +2", 
+        hands=empy.hands,                       --"Sulevia's Gauntlets +2", 
         left_ring="Karieyh Ring",
         right_ring="Ifrit Ring",
         back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
@@ -150,13 +150,13 @@
     }
 
     sets.ws["King's Justice"] = {
-        ammo="Aurgelmir Orb",      
+        ammo="Aurgelmir Orb", 
         head="Flamma Zucchetto +2",
         neck="War. Beads +1",  
-        left_ear="Ishvara Earring",
+        left_ear="Thrud Earring",
         right_ear="Moonshade Earring", 
         body="Flamma Korazin +1",   
-        hands="Sulevia's Gauntlets +2", 
+        hands=empy.hands,                           --"Sulevia's Gauntlets +2", 
         left_ring="Karieyh Ring",
         right_ring="Ifrit Ring",
         back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
@@ -166,13 +166,13 @@
     }
     
     sets.ws['Savage Blade'] = {
-        ammo="Aurgelmir Orb",                  
+        ammo="Aurgelmir Orb",            
         head="Skormoth Mask",                   
         neck="War. Beads +1",               
         left_ear="Moondshade Earring",            
-        right_ear="Ishvara Earring", 
+        right_ear="Thrud Earring", 
         body="Flamma Korazin +1",                      
-        hands="Sulevia's Gauntlets +2",         
+        hands=empy.hands,         
         left_ring="Rajas Ring",                    
         right_ring="Petrov Ring",                
         back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
@@ -186,9 +186,11 @@
         head=relic.head,
     }
     sets.ja['Aggressor'] = {
+        head=artifact.head,
         body=relic.body,
     }
     sets.ja['Berserk'] = {
+        body=artifact.body,
         feet=relic.feet,
     }
     sets.ja['Blood Rage'] = {
@@ -198,6 +200,7 @@
         hands=empy.hands,
     }
     sets.ja['Retaliation'] = {
+        hands=artifact.hands,
         feet=empy.feet,
     }
 
@@ -219,8 +222,9 @@
         legs="Sulevia's Cuisses +2",
         feet="Sulevia's Leggings +1",
     }
+
     send_command('input /macro book 6;wait .1;input /macro set 1')
-    send_command('bind f9 gs c autohasso')
+    send_command('bind f9 gs c autobuff')
     send_command('bind f10 gs c toggle TP set')
     send_command('bind ^f10 gs c toggle idle set')
     send_command('bind f11 gs c toggle weapon set')
@@ -260,8 +264,13 @@ function idle()
 
         -- check if Hasso should be re-applied
         if not buffactive['Hasso'] then
-            if autohasso == 1 then
+            if autobuff > 0 then
                 send_command('input /ja Hasso <me>')
+            end
+        end
+        if not buffactive['Retaliation'] then
+            if autobuff == 2 then
+                send_command('input /ja Retaliation <me>')
             end
         end
     else
@@ -304,21 +313,18 @@ function self_command(command)
         end
         windower.add_to_chat(123, ' ----- Weapon Set changed to '..weapon_set_names[weapon_index]..' -----')
         equip(sets.weapon[weapon_set_names[weapon_index]])
-        if (weapon_index == 1) or (weapon_index == 2) then
-            tp_index = 1
-        elseif weapon_index == 3 then
-            tp_index =2
-        end
-        windower.add_to_chat(123, ' ----- TP set changed to '..tp_set_names[tp_index]..' -----')
-        equip(sets.tp[tp_set_names[tp_index]])
     end
-    if command == 'autohasso' then
-        if autohasso == 0 then
-            autohasso = 1
+    if command == 'autobuff' then
+        autobuff = autobuff + 1
+        if autobuff > 2 then
+            autobuff = 0
+        end
+        if autobuff = 0 then
+            windower.add_to_chat(123, '---- No auto bufss ----')
+        elseif autobuff = 1 then
             windower.add_to_chat(123, '---- Auto Hasso on ----')
-        else 
-            autohasso = 0
-            windower.add_to_chat(123, '---- Auto Hasso off ----')
+        elseif autobuff = 2 then
+            windower.add_to_chat(123,'---- Auto Hasso and Retalliation on ----')
         end
     end
 end

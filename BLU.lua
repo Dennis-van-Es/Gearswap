@@ -100,6 +100,7 @@
         body="Luhlaza Jubbah +1",
         hands="Jhakri Cuffs +2",
         left_ring="Jhakri Ring",
+        right_ring="Kishar Ring",
         legs="Ayanmo Cosciales +2",
         feet="Jhakri Pigaches +2",    
     }
