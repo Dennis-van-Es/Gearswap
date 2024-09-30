@@ -45,6 +45,7 @@
         head="Meghanada Visor +1",
         body="Meghanada Cuirie +1",
         hands="Meghanada Gloves +1",
+        left_ring="Warden's Ring",
         waist="Sailfi Belt +1",
         legs="Mummu Kecks +1",
         feet="Meghanada Jambeaux +1",
@@ -134,7 +135,7 @@ function precast(spell)
         end
     end;    
 end
- 
+
 function midcast(spell)
     -- Cancel active sneak 
     if spell.english == 'Sneak' and spell.target.name == player.name then
@@ -144,11 +145,18 @@ function midcast(spell)
         send_command('cancel 71;')
     end;
 end
- 
+
 function aftercast(spell)
     idle()
 end
- 
+
+function buff_change(name, gain, buff_details)
+    if name=="Paralyze" and gain==true then
+        send_command('input //send mihenni /ma Paralyna Dennis')
+    end
+end
+
+
 function idle()
     if player.status=='Engaged' then
         equip(sets.tp[tp_set_names[tp_index]])
@@ -167,7 +175,10 @@ function self_command(command)
         if tp_index > #tp_set_names then tp_index = 1 end
         windower.add_to_chat(123,'----- TP Set changed to '..tp_set_names[tp_index]..' -----')
         equip(sets.tp[tp_set_names[tp_index]])
-    end    
+    end
+    if command == 'CureMe' then
+        send_command('input //send mihenni /ma "Cure III" Dennis')
+    end
 end
 
 -- Called when this job file is unloaded (eg: job change)

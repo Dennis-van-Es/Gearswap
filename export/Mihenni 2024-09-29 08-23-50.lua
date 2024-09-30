@@ -1,0 +1,17 @@
+sets.exported={
+    main="Eletta Sword",
+    sub="Nymph Shield",
+    ammo="Moggiebag",
+    head="Aya. Zucchetto",
+    body="Ayanmo Corazza",
+    hands="Aya. Manopolas",
+    legs="Ayanmo Cosciales",
+    feet="Aya. Gambieras",
+    neck="Focus Collar",
+    waist="Acipayam Belt",
+    left_ear="Flashward Earring",
+    right_ear="Spellbr. Earring",
+    left_ring="Perception Ring",
+    right_ring="Acumen Ring",
+    back="Aptitude Mantle",
+}

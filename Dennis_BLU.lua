@@ -2,11 +2,11 @@
     define_spells() -- Fills variables with spellnames
 
     tp_index = 1
-    tp_set_names = {"Normal","DT"}
+    tp_set_names = {"DT","Normal"}
     weapon_index = 1
     weapon_set_names = {"Thibron","Perfervid","Trial"}
     idle_index = 1
-    idle_set_names = {"AF","Relic","Empyrean","DT"}
+    idle_set_names = {"DT","AF","Relic","Empyrean"}
     learning = 0
     trialsword = "Nobilis"
 
@@ -56,6 +56,8 @@
         hands="Ayanmo Manopolas +2",
         legs="Ayanmo Cosciales +2",
         feet="Ayanmo Gambieras +2",
+        left_ring="Warden's ring",
+        right_ring="Archon ring",
         back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}},
     }
     
@@ -84,7 +86,7 @@
         body="Ayanmo Corazza +2",
         hands="Ayanmo Manopolas +2",
         left_ring="Ayanmo Ring",
-        right_ring="Petrov Ring",
+        right_ring="Warden's Ring",
         back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}},
         waist="Windbuffet Belt +1",
         legs="Ayanmo Cosciales +2",
@@ -205,7 +207,9 @@
         waist="Sailfi Belt +1",
     }
 
-    send_command('input /macro book 11;wait .1;input /macro set 1;wait .1;input //lua load blualert;wait .1;input //lua load azuresets')
+    idle()
+
+    send_command('input /macro book 11;wait .1;input /macro set 1;wait .1;input //lua load blualert;wait .1;input //lua load azuresets;wait 6;input /lockstyleset 6')
     send_command('bind f10 gs c toggle TP set')
     send_command('bind ^f10 gs c toggle idle set')
     send_command('bind ^f11 gs c toggle learning')
@@ -297,6 +301,8 @@ function self_command(command)
             send_command('input //gs disable hands')
             windower.add_to_chat(123,'---- Learning on ----')
         end
+    elseif command == 'CureMe' then
+        send_command('input //send mihenni /ma "Cure V" Dennis')
     else
         windower.add_to_chat(123,'Unkown command')
     end

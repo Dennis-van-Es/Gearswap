@@ -1,0 +1,17 @@
+sets.exported={
+    main="Kaja Chopper",
+    sub="Utu Grip",
+    ammo="Ginsen",
+    head="Boii Mask +2",
+    body="Flamma Korazin +1",
+    hands="Sulev. Gauntlets +2",
+    legs="Pumm. Cuisses +2",
+    feet="Pumm. Calligae +2",
+    neck={ name="War. Beads +1", augments={'Path: A',}},
+    waist="Ioskeha Belt",
+    left_ear="Cessance Earring",
+    right_ear={ name="Boii Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+9','Mag. Acc.+9',}},
+    left_ring="Karieyh Ring",
+    right_ring="Niqmaddu Ring",
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Damage taken-5%',}},
+}
