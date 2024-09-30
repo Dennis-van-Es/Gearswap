@@ -1,4 +1,4 @@
-  function get_sets()
+function get_sets()
     sets.idle = {}                  -- Leave this empty
     sets.melee = {}                 -- Leave this empty
     sets.ws = {}                    -- Leave this empty
@@ -17,31 +17,31 @@
     -- Job Ability Sets
     sets.ja['Elemental Seal'] = {}
 
-    -- Casting Sets
+    -- Singing Sets
     sets.precast.fastcast = {}
-
-    sets.midcast.cure = {}        
-    sets.midcast.mind = {}
-    sets.midcast.int = {}
-    sets.midcast.divine = {}
-    sets.midcast.enhancing = {}
-    sets.midcast.dark = {}
-
-    send_command('input /macro book 7;wait .1;input /macro set 1')
+    
+    sets.precast["Threnody"]={
+        ranged="Piccolo",
+    }
+    sets.precast["Etude"]={
+        ranged="Rose Harp",
+    }
+    sets.precast["Elegy"]={
+        ranged="Horn",
+    }
+    
+    send_command('input /macro book 17;wait .1;input /macro set 1')
 end
  
 function precast(spell)
-    if spell.prefix == '/jobability' then        
-        if sets.ja[spell.name] then
-            equip(sets.ja[spell.name])
-        end
-    elseif spell.prefix == '/weaponskill' then
-        if sets.ws['spell.name'] then
-            equip(sets.ws['spell.name'])
-        end
-    end
-    if spell.prefix == '/magic' then
-        equip(sets.precast.fastcast)
+    if spell.name:match('Minuet') then
+        equip(sets.precast["Minuet"])
+    elseif spell.name:match('Threnody') then
+        equip(sets.precast["Threnody"])
+    elseif spell.name:match('Minne') then
+        equip(sets.precast["Minne"])
+    elseif spell.name:match('Mambo') then
+        equip(sets.precast["Mambo"])
     end
 end
  

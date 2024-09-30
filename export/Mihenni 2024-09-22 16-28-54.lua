@@ -1,0 +1,17 @@
+sets.exported={
+    main="Homestead Wand",
+    sub="Nymph Shield",
+    ammo="Moggiebag",
+    head="Inyanga Tiara +1",
+    body="Inyanga Jubbah",
+    hands="Inyan. Dastanas +1",
+    legs="Inyanga Shalwar",
+    feet="Inyan. Crackows +1",
+    neck="Focus Collar",
+    waist="Acipayam Belt",
+    left_ear="Flashward Earring",
+    right_ear="Spellbr. Earring",
+    left_ring="Perception Ring",
+    right_ring="Inyanga Ring",
+    back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}},
+}

@@ -1,4 +1,4 @@
-  function get_sets()
+function get_sets()
     sets.idle = {}                  -- Leave this empty
     sets.melee = {}                 -- Leave this empty
     sets.ws = {}                    -- Leave this empty
@@ -9,61 +9,27 @@
  
     sets.idle.normal = {}    
     
-    sets.melee.normal = {
-    }    
-    -- Weapon Skill Sets
-    sets.ws['Red Lotus Blade'] = {}    
-
+    
     -- Job Ability Sets
-    sets.ja['Elemental Seal'] = {}
+    sets.ja['Divine Seal'] = {}
 
     -- Casting Sets
     sets.precast.fastcast = {}
 
     sets.midcast.cure = {}        
-    sets.midcast.mind = {}
-    sets.midcast.int = {}
+    
+    
     sets.midcast.divine = {}
     sets.midcast.enhancing = {}
     sets.midcast.dark = {}
 
-    send_command('input /macro book 7;wait .1;input /macro set 1')
+    send_command('input /macro book 18;wait .1;input /macro set 1')
 end
  
 function precast(spell)
-    if spell.prefix == '/jobability' then        
-        if sets.ja[spell.name] then
-            equip(sets.ja[spell.name])
-        end
-    elseif spell.prefix == '/weaponskill' then
-        if sets.ws['spell.name'] then
-            equip(sets.ws['spell.name'])
-        end
-    end
-    if spell.prefix == '/magic' then
-        equip(sets.precast.fastcast)
-    end
 end
  
 function midcast(spell)
-    if spell.name:match('Cure') or spell.name:match('Cura') then                -- Cure in a cure set
-        equip(sets.midcast.cure)
-    elseif spell.skill == 'Enfeebling Magic' then                               -- Enfeebling in a MND or INT based enfeebling set
-        if spell.type == 'WhiteMagic' then
-            equip(sets.midcast.mind)
-        elseif spell.type == 'BlackMagic' then
-            equip(sets.midcast.int)
-        end
-    elseif spell.skill == 'Divine Magic' then                                   -- Divine in specialized gear
-        equip(sets.midcast.divine)
-    elseif spell.skill == 'Elemental Magic' then                                -- Elemental in +int gear
-        equip(sets.midcast.int) 
-    elseif spell.skill == 'Enhancing Magic' then                                 -- Enhance in specialized gear
-        equip(sets.midcast.enhancing)
-    elseif spell.skill == 'Dark Magic' then                                      -- Dark magic in dark gear
-        equip(sets.midcast.dark)
-    end
-    
     -- Cancel active sneak 
     if spell.english == 'Sneak' and spell.target.name == player.name then
         send_command('cancel 71;')
