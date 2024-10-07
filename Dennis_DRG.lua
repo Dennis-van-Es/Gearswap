@@ -8,6 +8,7 @@ function get_sets()
     sets.aftercast = {}             -- leave this empty
 
     autohasso = 0
+    autofight = 0
     tp_index = 1
     tp_set_names = {"Normal","Glass Cannon", "DT"}
 
@@ -170,6 +171,7 @@ function get_sets()
 
     send_command('input /macro book 2;wait .1;input /macro set 1')
     send_command('bind f9 gs c autohasso')
+    send_command('bind !f9 gs c autofight')
     send_command('bind f10 gs c toggle TP set')
 end
  
@@ -199,9 +201,6 @@ end
  
 function aftercast(spell)
     idle()
-    if player.max_hp - player.hp > 400 then
-        CureMe()
-    end
 end
  
 function idle()
@@ -220,6 +219,12 @@ end
 
 function status_change(new,old)
     idle()
+
+    if player.status == 'Idle' and autofight == 1 then
+        windower.add_to_chat('-- Attempting next fight --')
+        send_command('wait 1;exec nextfight')
+    end
+
 end
 
 function buff_change(name, gain, buff_details)
@@ -229,27 +234,6 @@ function buff_change(name, gain, buff_details)
                 send_command('input /ja Hasso <me>')
             end
         end
-    end
-    if gain then
-        if name == 'paralysis' then
-            send_command('input //send Mihenni /ma Paralyna Dennis')
-        end
-        if name == 'petrified' then
-            send_command('input //send Mihenni /ma Stona Dennis')
-        end
-        if name == 'poison' then
-            send_command('input //send Mihenni /ma Poisona Dennis')
-        end
-        if name == 'curse' then
-            send_command('input //send Mihenni /ma Cursna Dennis')
-        end
-        if name == 'plague' then
-            send_command('input //send Mihenni /ma Viruna Dennis')
-        end
-        if name == 'Evasion Down' then
-            send_command('input //send Mihenni /ma Erase Dennis')
-        end
-        windower.add_to_chat(123,'--------- Gained: '..name..' ---------')
     end
 end
 
@@ -268,31 +252,22 @@ function self_command(command)
             autohasso = 0
             windower.add_to_chat(123, '---- Auto Hasso off ----')
         end
-    end  
-    if command == 'CureMe' then
-        CureMe()
     end
-    if command == 'Holy' then
-        send_command('input //send Mihenni /ma "Holy" <bt>')
+    if command == 'autofight' then
+        autofight = autofight + 1
+        if autofight > 1 then 
+            autofight = 0
+        end
+        if autofight == 1 then
+            windower.add_to_chat(123, '---- Auto Fight on ----')
+        else
+            windower.add_to_chat(123, '---- Auto Fight off ----')
+        end
     end
 end
 
 function user_unload()
     send_command('unbind f10')
-    send_command('unbind f9')    
-end
-
-function CureMe()
-    windower.add_to_chat(123,'max hp = '..player.max_hp..'. Current = '..player.hp..'. Missing: '..player.max_hp - player.hp)
-    if player.max_hp - player.hp > 600 then
-        send_command('input //send Mihenni /ma "Cure VI" Dennis')
-    elseif player.max_hp - player.hp > 500 then
-        send_command('input //send Mihenni /ma "Cure V" Dennis')
-    elseif player.max_hp - player.hp > 400 then
-        send_command('input //send Mihenni /ma "Cure IV" Dennis')
-    elseif player.max_hp - player.hp > 200 then
-        send_command('input //send Mihenni /ma "Cure III" Dennis')
-    else
-        send_command('input //send Mihenni /ma "Regen IV" Dennis')
-    end
+    send_command('unbind f9')
+    send_command('unbind !f9')
 end
